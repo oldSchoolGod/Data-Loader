@@ -1,0 +1,165 @@
+<!--
+@description       : 
+@author            : ChangeMeIn@UserSettingsUnder.SFDoc
+@group             : 
+@last modified on  : 05-11-2022
+@last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+<lightning-card  style="width: 100%;">
+<template if:true={isLoaded}>
+    <lightning-spinner 
+        alternative-text="Loading" 
+        size="large">
+    </lightning-spinner>
+</template>
+<div class="process_bar">
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <span class="chooseobject Active">1. Choose Object</span>
+        </div>
+        <div class="slds-col">
+            <span class="upload_file">2. file</span>
+        </div>
+        <div class="slds-col">
+            <span class="Map_field">3. Maping</span>
+        </div>
+        <div class="slds-col">
+            <span class="run">4. Run</span>
+        </div>
+    </div>
+</div>
+
+<template if:true={selectObj}>
+    <div class="search_filter">
+        <div class="search_filter_in">   
+            <div class="menu">
+                <div class="searchbar">
+                    <lightning-input name="enter-search" placeholder="Quik find.." type="search" variant="label-hidden" onchange={handleSeach}  ></lightning-input>
+                </div>
+                <div class="menubtn">
+                    <lightning-button-menu label="">
+                       <!-- <lightning-button class="menu_btn" label="Custom object" onclick={ShowCustumObject}>
+                        </lightning-button>
+                        <lightning-button class="menu_btn"  label="Standard Object" onclick={ShowStandardObject}>
+                        </lightning-button>
+                        <lightning-button class="menu_btn"  label="Show All" onclick={SHowAllObject}>
+                        </lightning-button>-->
+                        <button class="menu_btn" onclick={ShowCustumObject}>Custom object</button>
+                        <button class="menu_btn" onclick={ShowStandardObject}>Standard Object</button>
+                        <button class="menu_btn" onclick={SHowAllObject}>Show All</button>
+                    </lightning-button-menu>
+                </div>
+            </div>
+            <div class="objectNAme">
+                <template for:each={objNameTemp} for:item="fieldsNameOption">
+                    <li key={fieldsNameOption.label} value={fieldsNameOption.label} >
+                    <a onclick={getSelectedObj} data-record={fieldsNameOption.label}  data-id={fieldsNameOption.label}><span class="Object_Value">{fieldsNameOption.value}</span><span class="Object_label">{fieldsNameOption.label}</span></a></li>
+                </template> 
+            </div>
+            <div class="Import_Nextbtn">
+                <lightning-button  variant="Brand" label="Next" title="Next" onclick={goToFileUplode} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template if:true={beforeUplode}>
+    <lightning-card variant="Narrow">
+        <div class="uploadfilescreen">
+            <div class="file_upload ">
+                <lightning-file-upload 
+                accept={acceptedFormats} 
+                multiple="multiple" 
+                onuploadfinished={uploadFileHandler}>
+                </lightning-file-upload>
+
+            </div>
+            <div class="selectedFileName">Selected File Name: {selectedFileName} </div>
+            <lightning-button variant="brand" label="Next" title="Primary action" onclick={goToMappingStep} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="brand" label="Previous" title="Primary action" onclick={goBackToSelectObj} class="slds-m-left_x-small"></lightning-button>
+         </div>
+    </lightning-card>
+</template>
+
+
+
+<template if:true={isObjectSelected}>
+    <lightning-button variant="brand" label="Add Row" title="Primary action" onclick={addRow} class="slds-m-left_x-small"></lightning-button>
+<div class="slds-col slds-size_1-of-1 block">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-grid slds-wrap">
+               
+                <div class="slds-col slds-size_1-of-1 container">
+                    
+                        <lightning-combobox
+                        name="csvHeaderList"
+                        label="Fields Mapping"
+                        placeholder="Choose Csv Head"
+                        value={chosenValue}
+                        onchange={handleChange}
+                        options={roleOptions}>
+                    </lightning-combobox>
+                    <p></p>
+                Selected Value:
+                <lightning-formatted-text title="Chosen Key" value={selectedValue}></lightning-formatted-text>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 container">
+                        <lightning-combobox
+                        name="objFieldList"
+                        placeholder="Choose Field"
+                        value={chosenFieldNameValue}
+                        onchange={getSelectedObjFieldNames}
+                        options={objFieldNameOptions}>
+                    </lightning-combobox>
+                    <p></p>
+                    Selected Field Value:
+                    <lightning-formatted-text title="Chosen Key" value={selectedFieldValue}></lightning-formatted-text>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<lightning-layout>
+    <lightning-layout-item padding="around-small" size="12">
+        <ul class="slds-has-dividers_around-space">
+            <template for:each={recordMap} for:item="fieldMap">
+                <li class="slds-item" key={fieldMap.id}>
+                    <lightning-layout
+                        vertical-align="center"
+                        horizontal-align="spread"
+                    >
+                        <lightning-layout-item padding="horizontal-small">
+                        {fieldMap.csvHeadName}
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="horizontal-small">
+                        {fieldMap.fieldNmae}
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="horizontal-small">
+                            <lightning-button-icon
+                                icon-name="utility:delete"
+                                alternative-text="Delete"
+                                title="Delete"
+                                name={fieldMap.id}
+                                onclick={deleteRow}
+                            ></lightning-button-icon>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </li>
+            </template>
+        </ul>
+    </lightning-layout-item>
+   
+</lightning-layout>
+<lightning-button label="save Record" title="save Record" onclick={saveRecord} class="slds-m-left_x-small"></lightning-button>
+<lightning-button variant="brand" label="Previous" title="Previous" onclick={goBackToUplodeFile} class="slds-m-left_x-small"></lightning-button>
+</template>
+</lightning-card>
+</template>

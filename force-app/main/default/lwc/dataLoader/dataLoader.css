@@ -1,0 +1,502 @@
+@font-face {
+    font-family: 'myFontAwesome';
+    src: url('resource/FontAwesome/fontawesome-free-5.13.0-web/webfonts/fa-regular-400.woff') format('woff');
+}
+.dataloader {
+    margin: -26px 0 0 0;
+    padding: 0px;
+    width: 100%;
+    float: left;
+    background-color: #F5ECEA;
+}
+.headertop[c-dataLoader_dataLoader] {
+    /* overflow: hidden; */
+    /* background-color: #f1f1f1; */
+    /* padding: 20px 10px; */
+    width: 100%;
+    height: 70px;
+    float: left;
+    background-color: #fff;
+}
+/*--Header Left--*/
+.header_left {
+    width: auto;
+    float: left;
+    padding: 10px 0;
+    padding: 10px 0 10px 15px;
+}
+.header_left img {
+    width: 80px;
+    height: 50px;
+    object-fit: contain;
+}
+.header_left ul {
+    display: inline-flex;
+    padding: 0 0 0 10px;
+}
+.header_left li {
+    padding: 0 15px 0 0;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 20px;
+}
+.header_left li:hover {
+ background-color: #00b7df;
+ color: #fff;
+ padding: 6px;
+}
+/*--Header Right--*/
+.header_right {
+    float: right;
+    width: auto;
+    padding: 25px 0;
+}
+.header_right ul {
+    display: inline-flex;
+    padding: 0 25px 0 0; 
+    
+}
+.header_right ul li {
+    padding: 0 0 0 15px;
+}
+.header_right ul a {
+    font-size: 15px;
+    font-weight: 700px;
+}
+/*--DROPDOWN FOR NEW TASK--*/
+.dropbtn {
+    color: #000;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 20px;
+  }
+.dropbtn:hover{
+    background-color: #00b7df;
+    color: #fff;
+
+}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 15px 15px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+  }
+  
+  .dropdown-content a:hover {background-color: #bbb;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .header-right {
+      float: none;
+    }
+  }
+  /*--Body Start--*/
+  .Body{
+    margin: 0px;
+    padding: 0px;
+    height: 70vh;
+    background-color: #F5ECEA;
+    display: inline-block;
+    text-align: center;
+    width: inherit;
+  }
+  .BodyWrap[c-dataLoader_dataLoader] {
+    width: 1080px;
+    margin: 14px auto;
+    display: inline-block;
+    background-color: #fff;
+    text-align: center;
+}
+.bodysection {
+    width: 100%;
+    float: left;
+}
+  .Gettingstart {
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #bbb;
+    margin: 0 0 10px 0;
+}
+.Gettingstart p {
+    margin: 0;
+    padding: 5px 1px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #000;
+    line-height: 42px;
+}
+.help-center{
+    --sds-c-icon-color-foreground: #08c;
+    --sds-c-icon-color-background: #fff;
+}
+.info-icon {
+    --sds-c-icon-color-foreground: #08c;
+}
+.get-started {
+    --sds-c-icon-color-foreground: #000;
+}
+
+.slds-icon-text-default {
+	--slds-c-icon-color-foreground: ;
+}
+.bodysectionleft {
+    float: left;
+    width: 25%;
+}
+.bodysectionleft_Welcome {
+    float: left;
+    width: 100%;
+}
+.bodysectionleft_Welcome a {
+    float: left;
+    width: 100%;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    line-height: 20px;
+}
+.bodysectionleft_Content {
+    float: left;
+    width: 100%;
+    border-right: 1px solid #bbb;
+    padding: 0px 0px 0px 2px;
+    text-align: left;
+}
+.bodysectionleft_Content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.bodysectionleft_Content li {
+    list-style: none;
+    padding: 15px 5px;
+}
+.bodysectionleft_Content li a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #000;
+    padding: 15px 5px;
+    text-decoration: none;
+}
+.bodysectionleft_Content li:hover{
+    background-color: #00b7df;
+}
+.bodysectionleft_Content li:hover a{
+    color: #fff;
+}
+.bodysectionright {
+    float: right;
+    width: 70%;
+}
+.welcometodataloder {
+    float: left;
+    width: 100%;
+}
+.welcometodataloder p {
+    float: left;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #000;
+}
+
+/*-Footer-*/
+.Footer {
+    float: left;
+    width: 100%;
+}
+.footercontent {
+    float: left;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+}
+.poweredby {
+    font-size: 15px;
+    font-weight: 200;
+    color: #000;
+    line-height: 18px;
+    padding: 12px 0;
+}
+/*--All object list modal popup container--*/
+.modal_container {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 70px 0 0 0;
+}
+.modal_container_in {
+    display: inline-block;
+    width: 50%;
+    background-color: #fff;
+}
+.All_object_list {
+    height: 60vh;
+    width: 100%;
+    text-align: left;
+    padding: 0 15px;
+}
+.modal_container .modal_container_in .slds-modal__header {
+    height: 50px;
+}
+.objectlist_section {
+
+    margin: 8px 0 0 0;
+}
+.objectlist_section tr {
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+}
+.objectlist_section table tbody tr:hover {
+    background-color: #00b7df;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.objectlist_section td:hover {
+   padding: 5px 15px;
+}
+.objectlist_section td {
+    padding: 5px 15px;
+ }
+ .objectlist_section th {
+    padding: 5px 15px;
+ }
+.heading_export {
+    color:#D5D2D2;
+
+}
+.Object_Label {
+    width: 40%;
+    float: left;
+}
+.Object_Name {
+    width: 60%;
+    float: left;
+}
+.menu {
+    float: right;
+    margin: 12px 12px 12px 12px;
+}
+.slds-p-left_xxx-small {
+    float: right;
+    margin: 12px 12px 12px 12px;
+}
+.slds-button_brand, .slds-button--brand {
+    margin: 5px 0;
+}
+.deletebody {
+    float: left;
+    width: 100%;
+    height: 40vh;
+}
+.Active {
+    color: #00b7df;
+    font-weight: 700;
+}
+.uploadfile {
+    float: left;
+    width: 100%;
+    padding: 15px 0;
+}
+.delete {
+    float: left;
+    width: 100%;
+    padding: 5px 0 0 0;
+}
+.objectNAme{
+    width: 65%;
+    height: 20rem;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    text-align: left;
+    padding: 0 10px;
+    border-bottom: 1px solid #808080;
+    border-top: 1px solid #808080;
+}
+.objectNAme a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    line-height: 25px;
+    border-bottom: 1px solid #808080;
+    width: 100%;
+    float: left;
+}
+.objectNAme a .Object_Value {
+    width: 50%;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.objectNAme a .Object_label {
+    width: 50%;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.objectNAme a:hover {
+    background-color: #00b7df;
+    color: #fff;
+}
+
+.objectNAme li {
+ text-decoration: none;
+ list-style: none;
+ padding: 0 0 0 10px;
+}
+
+.objectNAme {
+    width: 100%;
+    float: left;
+    text-align: left;
+    height: 15rem;
+    overflow-y: scroll;
+}
+.objectNAme a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    line-height: 25px;
+    border-bottom: 1px solid #d3d3d2;
+    width: 100%;
+    float: left;
+}
+.objectNAme a .Object_Value {
+    width: 50%;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.objectNAme a .Object_label {
+    width: 50%;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.objectNAme a:hover {
+    background-color: #00b7df;
+    color: #fff;
+}
+
+.objectNAme li {
+ text-decoration: none;
+ list-style: none;
+ padding: 0 0 0 10px;
+}
+.Active {
+    color: #00b7df;
+    font-weight: 700;
+}
+.Import_Nextbtn {
+    width: 100%;
+    float: right;
+    padding: 8px 0 0 0 ;
+}
+
+.search_filter {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+.search_filter_in {
+    display: inline-block;
+    width: 500px;
+}
+.menu1 {
+    width: 100%;
+    float: left;
+    background-color: #d3d3d2;
+    padding: 5px 8px;
+    margin: 15px 0;
+}
+.searchbar {
+    float: left;
+    width: 90%;
+}
+.menubtn {
+    float: right;
+    width: 10%;
+}
+.menu_btn :hover {
+    background-color: #00b7df;
+    color: #fff;
+}
+.searchbar label.slds-form-element__label {
+    display: none !important;
+
+}
+.menu.menubtn button.slds-button {
+    width: 100px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+}
+.uploadfilescreen {
+    float: left;
+    width: 100%;
+    height: 15rem;
+}
+.file_upload {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+}
+.selectedFileName {
+    float: left;
+    width: 100%;
+    font-size: 15px;
+    color: #000;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 400;
+    padding: 0px 0 25px 0;
+}
+.selected {
+    background-color: #c4c4c4;
+}
+.menu_btn {
+    float: left;
+    width: 100%;
+    font-size: 10px;
+    padding: 5px 2px;
+    margin-bottom: 5px;
+    border: 1px solid #c4c4c4;
+}
